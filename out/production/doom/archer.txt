@@ -1,0 +1,134 @@
+import java.io.Serializable;
+import java.text.DecimalFormat;
+import java.util.*;
+
+
+public class Archer extends Character implements Serializable
+{
+
+    public Archer() {
+
+    }
+    @Override
+    public void setAttack(int value)
+    {
+        this.attack = value;
+    }
+    //attack variable accessor 
+    @Override
+    public void rollDamage() {
+        attack = rand.nextInt(101);
+//        System.out.println(attack);
+    }
+
+    @Override
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    @Override
+    public String getUsername()
+    {
+        return username;
+    }
+
+    //attack variable mutator
+    @Override
+    public int getDamage() {
+        return attack;
+    }
+
+    public void showDamage() {
+        System.out.println("You inflicted: " + attack + " damage points!");
+    }
+
+    @Override
+    public void setAccuracy(int value) {
+        this.accuracy = value;
+    }
+    public int getAccuracy()
+    {
+        return accuracy;
+    }
+
+    @Override
+    public void rollAttack() {
+        accuracy = (rand.nextInt(25) + 1);
+    }
+
+    //Characters accuracy is random value times .10
+    public int getAttack()
+    {
+        return (return attack);
+    }
+
+    @Override
+    public void setPhysicalDefense(int value)
+    {
+        this.physicalDefense = value;
+    }
+
+    @Override
+    public int getPhysicalDefense() {
+        return physicalDefense;
+    }
+
+    @Override
+    public void rollPhysDefense() {
+        health = health + physicalDefense;
+        physicalDefense = rand.nextInt(25);
+
+        System.out.println("Health Boosted " + physicalDefense + " points!");
+
+    }
+
+    public int getPhyDefense() {
+        return physicalDefense;
+    }
+
+    @Override
+    public void setMagicalDefense(int value)
+    {
+        this.magicalDefense = value;
+    }
+
+    @Override
+    public int getMagicalDefense(int value) {
+        return 0;
+    }
+
+    @Override
+    public void rollMagicDefense() {
+
+        magicalDefense = rand.nextInt(100);
+
+    }
+
+    public int getMagicDefense() {
+        return magicalDefense;
+    }
+
+    @Override
+    public void setHealth() {
+        health = 100;
+    }
+
+    public void kill() {
+        health = 0;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    @Override
+    public void takeDamage(int damage) {
+
+        health = (health - damage);
+        System.out.println("Your Health: " + health + " points");
+
+    }
+
+
+}
